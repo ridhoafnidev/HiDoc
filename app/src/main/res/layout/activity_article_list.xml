@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/layoutParent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackgroundPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/componentToolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/component_toolbar" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lists"
+        app:layout_constraintTop_toBottomOf="@id/componentToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:elevation="0dp"
+        android:fadingEdge="none"
+        android:paddingLeft="@dimen/activity_horizontal_margin_small"
+        android:paddingRight="@dimen/activity_horizontal_margin_small"
+        android:nestedScrollingEnabled="false"
+        android:layout_marginTop="@dimen/component_medium"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+</android.support.constraint.ConstraintLayout>

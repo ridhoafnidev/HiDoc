@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/layoutContainer"
+	android:clickable="true"
+	android:focusable="true"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/button_light_flat"
+	android:layout_marginBottom="@dimen/divider"
+    style="@style/AppTheme.Layout.Horizontal"
+    android:paddingTop="@dimen/component_big"
+    android:paddingBottom="@dimen/component_big"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+	<ImageView
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:id="@+id/imageProfilePicture"
+		android:layout_width="@dimen/profile_picture_medium"
+		android:layout_height="@dimen/profile_picture_medium"
+		android:background="@drawable/shape_circle_placeholder"/>
+	
+	<android.support.constraint.ConstraintLayout
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toRightOf="@id/imageProfilePicture"
+		app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="@dimen/component_medium"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content">
+
+		<com.ismealdi.hidoc.utils.components.AmTextView
+			android:id="@+id/labelName"
+            app:am_font_style="medium"
+			android:textColor="@color/colorTextPrimary"
+			app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/labelDate"
+            android:layout_marginEnd="@dimen/component_medium"
+			android:lines="1"
+			android:ellipsize="end"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content" />
+
+		<com.ismealdi.hidoc.utils.components.AmTextView
+			android:id="@+id/labelDate"
+			android:textColor="@color/colorTextPrimary"
+			app:layout_constraintTop_toTopOf="@id/labelName"
+            app:layout_constraintBottom_toBottomOf="@id/labelName"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="@dimen/text_tiny"
+			android:lines="1"
+			android:ellipsize="end"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+
+		<com.ismealdi.hidoc.utils.components.AmTextView
+			app:layout_constraintTop_toBottomOf="@id/labelName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/labelNumMessage"
+            android:layout_marginEnd="@dimen/component_medium"
+			android:id="@+id/labelMessage"
+			android:textColor="@color/colorTextPrimary"
+            android:layout_marginTop="@dimen/component_tiny"
+			android:lines="1"
+			android:ellipsize="end"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content" />
+
+        <com.ismealdi.hidoc.utils.components.AmTextView
+            android:visibility="gone"
+            app:am_font_style="bold"
+            android:id="@+id/labelNumMessage"
+            android:textColor="@color/colorTextLight"
+            app:layout_constraintTop_toTopOf="@id/labelMessage"
+            app:layout_constraintBottom_toBottomOf="@id/labelMessage"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="@dimen/text_tiny"
+            android:background="@drawable/shape_circle_primary"
+            android:text="20"
+            android:lines="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+		
+	</android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

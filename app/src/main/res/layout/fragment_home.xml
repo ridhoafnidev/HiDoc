@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme.Layout.Vertical"
+    android:background="@color/colorBackgroundPrimary"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.constraint.ConstraintLayout
+            style="@style/AppTheme.Margin.Horizontal"
+            android:id="@+id/layoutTopUser"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingLeft="@dimen/component_big"
+            android:paddingRight="@dimen/component_big"
+            android:paddingTop="@dimen/component_extra"
+            android:paddingBottom="@dimen/component_extra"
+            android:background="@drawable/shape_round"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageProfilePicture"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@drawable/shape_circle_placeholder"
+                android:layout_width="@dimen/profile_picture"
+                android:layout_height="@dimen/profile_picture" />
+
+            <android.support.constraint.ConstraintLayout
+                app:layout_constraintTop_toTopOf="@id/imageProfilePicture"
+                app:layout_constraintBottom_toBottomOf="@id/imageProfilePicture"
+                app:layout_constraintLeft_toRightOf="@id/imageProfilePicture"
+                app:layout_constraintRight_toLeftOf="@id/buttonHospital"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    android:id="@+id/labelWelcome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_morning"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_small"
+                    android:layout_marginStart="@dimen/component_medium"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    app:am_font_style="bold"
+                    android:id="@+id/labelName"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_medium"
+                    app:layout_constraintTop_toBottomOf="@id/labelWelcome"
+                    app:layout_constraintLeft_toLeftOf="@id/labelWelcome"
+                    app:layout_constraintRight_toRightOf="@id/labelWelcome"
+                    android:text="@string/text_dash"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </android.support.constraint.ConstraintLayout>
+
+            <com.ismealdi.hidoc.utils.components.AmButton
+                android:id="@+id/buttonHospital"
+                style="@style/AppTheme.Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:drawableEnd="@drawable/ic_hospital_marker"
+                android:drawablePadding="@dimen/component_small"
+                android:layout_marginEnd="@dimen/component_small"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_tiny"
+                android:background="@drawable/button_primary"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/input_small"
+                android:text="@string/text_hospital"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v4.view.ViewPager
+            style="@style/AppTheme.Margin.Horizontal"
+            android:fadingEdge="none"
+            android:layout_marginTop="@dimen/component_big"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutTopUser"
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:background="@drawable/shape_round"
+            android:layout_height="@dimen/slider"/>
+
+        <android.support.design.widget.TabLayout
+            app:layout_constraintLeft_toLeftOf="@id/slider"
+            app:layout_constraintBottom_toBottomOf="@id/slider"
+            android:id="@+id/sliderIndicator"
+            android:layout_marginLeft="@dimen/component_big"
+            android:layout_marginRight="@dimen/component_big"
+            android:layout_marginBottom="61dp"
+            android:layout_width="wrap_content"
+            app:tabBackground="@drawable/shape_circle_indicator"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            android:layout_height="4dp"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_marginTop="@dimen/component_extra_big"
+            app:layout_constraintTop_toBottomOf="@id/slider"
+            android:id="@+id/layoutSpecialist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.ismealdi.hidoc.utils.components.AmTextView
+                style="@style/AppTheme.Margin.Horizontal"
+                android:id="@+id/labelSpecialists"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:am_font_style="bold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_medium"
+                android:text="@string/text_specialists"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/gridSpecialists"
+                app:layout_constraintTop_toBottomOf="@id/labelSpecialists"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:elevation="0dp"
+                android:fadingEdge="none"
+                android:paddingLeft="@dimen/activity_horizontal_margin_small"
+                android:paddingRight="@dimen/activity_horizontal_margin_small"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginTop="@dimen/component_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_marginTop="@dimen/component_extra_big"
+            app:layout_constraintTop_toBottomOf="@id/layoutSpecialist"
+            android:id="@+id/layoutDoctors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.ismealdi.hidoc.utils.components.AmTextView
+                style="@style/AppTheme.Margin.Horizontal"
+                android:id="@+id/labelDoctors"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:am_font_style="bold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_medium"
+                android:text="@string/text_doctor_specialists"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.ismealdi.hidoc.utils.components.AmTextView
+                style="@style/AppTheme.Margin.Horizontal"
+                android:id="@+id/buttonSeeAllDoctor"
+                app:layout_constraintTop_toTopOf="@id/labelDoctors"
+                app:layout_constraintBottom_toBottomOf="@id/labelDoctors"
+                app:layout_constraintRight_toRightOf="parent"
+                app:am_font_style="bold"
+                android:textAllCaps="true"
+                android:textColor="@drawable/button_text_primary"
+                android:textSize="@dimen/text_small"
+                android:text="@string/text_see_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:clipToPadding="false"
+                android:id="@+id/gridDoctors"
+                app:layout_constraintTop_toBottomOf="@id/labelDoctors"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:elevation="0dp"
+                android:fadingEdge="none"
+                android:nestedScrollingEnabled="false"
+                android:paddingLeft="@dimen/activity_horizontal_margin_small"
+                android:paddingRight="@dimen/activity_horizontal_margin_small"
+                android:layout_marginTop="@dimen/component_big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_marginTop="@dimen/component_extra_big"
+            app:layout_constraintTop_toBottomOf="@id/layoutDoctors"
+            android:id="@+id/layoutArticles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.ismealdi.hidoc.utils.components.AmTextView
+                style="@style/AppTheme.Margin.Horizontal"
+                android:id="@+id/labelArticles"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:am_font_style="bold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_medium"
+                android:text="@string/text_articles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.ismealdi.hidoc.utils.components.AmTextView
+                style="@style/AppTheme.Margin.Horizontal"
+                android:id="@+id/buttonSeeAllArticles"
+                app:layout_constraintTop_toTopOf="@id/labelArticles"
+                app:layout_constraintBottom_toBottomOf="@id/labelArticles"
+                app:layout_constraintRight_toRightOf="parent"
+                app:am_font_style="bold"
+                android:textAllCaps="true"
+                android:textColor="@drawable/button_text_primary"
+                android:textSize="@dimen/text_small"
+                android:text="@string/text_see_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:clipToPadding="false"
+                android:id="@+id/gridArticles"
+                app:layout_constraintTop_toBottomOf="@id/labelArticles"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:elevation="0dp"
+                android:fadingEdge="none"
+                android:nestedScrollingEnabled="false"
+                android:paddingLeft="@dimen/activity_horizontal_margin_small"
+                android:paddingRight="@dimen/activity_horizontal_margin_small"
+                android:layout_marginTop="@dimen/component_big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>

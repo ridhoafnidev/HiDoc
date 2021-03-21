@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme.Layout.Vertical"
+    android:background="@color/colorBackgroundPrimary"
+    android:paddingBottom="0dp"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginBottom="@dimen/component_extra_big"
+            android:clipToPadding="false"
+            android:id="@+id/gridSuggestion"
+            android:elevation="0dp"
+            android:fadingEdge="none"
+            android:paddingLeft="@dimen/activity_horizontal_margin_small"
+            android:paddingRight="@dimen/activity_horizontal_margin_small"
+            android:nestedScrollingEnabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/layoutRecent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.ismealdi.hidoc.utils.components.AmTextView
+                style="@style/AppTheme.Margin.Horizontal"
+                android:id="@+id/labelRecent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:am_font_style="bold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_medium"
+                android:text="@string/text_recent_conversations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:clipToPadding="false"
+                android:id="@+id/listChat"
+                app:layout_constraintTop_toBottomOf="@id/labelRecent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:elevation="0dp"
+                android:fadingEdge="none"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginTop="@dimen/component_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

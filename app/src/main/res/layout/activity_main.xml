@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+		android:id="@+id/layoutParent"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/colorBackgroundPrimary"
+		tools:context=".view.user.UserMainActivity">
+
+	<include
+			android:id="@+id/componentToolbar"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			layout="@layout/component_toolbar" />
+
+	<FrameLayout
+			android:id="@+id/frameLayout"
+			app:layout_constraintTop_toBottomOf="@id/componentToolbar"
+			app:layout_constraintBottom_toTopOf="@id/componentBottomMenu"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"/>
+
+	<android.support.design.widget.BottomNavigationView
+			android:id="@+id/componentBottomMenu"
+			app:menu="@menu/user"
+			app:elevation="0dp"
+			android:elevation="0dp"
+			android:stateListAnimator="@null"
+			app:labelVisibilityMode="unlabeled"
+			app:layout_anchorGravity="bottom"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			android:background="@drawable/shape_bottom_navigation"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+
+</android.support.constraint.ConstraintLayout>

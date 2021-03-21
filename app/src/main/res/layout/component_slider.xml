@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <ImageView
+    android:id="@+id/image"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:adjustViewBounds="true"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_round"
+    android:scaleType="centerCrop" />
+	
+	<android.support.constraint.ConstraintLayout
+		app:layout_constraintLeft_toLeftOf="@id/image"
+		app:layout_constraintBottom_toBottomOf="@id/image"
+		android:padding="@dimen/component_big"
+		android:paddingEnd="@dimen/component_super"
+		android:paddingTop="@dimen/component_small"
+		android:paddingBottom="@dimen/component_small"
+		android:layout_width="wrap_content"
+		android:layout_height="@dimen/slider_caption_frame"
+		android:background="@drawable/shape_slider_caption"
+		tools:ignore="RtlSymmetry">
+		
+			<com.ismealdi.hidoc.utils.components.AmTextView
+				app:am_font_style="bold"
+				android:id="@+id/labelTitle"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintLeft_toLeftOf="parent"
+				android:textColor="@color/colorTextLight"
+				android:textSize="@dimen/text_tiny"
+				android:maxLines="1"
+				android:lines="1"
+				android:text="Get Up To 20% Off"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+		
+			<com.ismealdi.hidoc.utils.components.AmTextView
+				android:id="@+id/labelSubTitle"
+				android:textColor="@color/colorTextLight"
+				android:textSize="@dimen/text_small"
+				app:layout_constraintTop_toBottomOf="@id/labelTitle"
+				app:layout_constraintLeft_toLeftOf="@id/labelTitle"
+				android:maxLines="1"
+				android:lines="1"
+				android:text="Medical Checkups"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+		
+	</android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

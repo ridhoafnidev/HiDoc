@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginTop="@dimen/component_small"
+	android:layout_marginBottom="@dimen/component_small"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+	<com.ismealdi.hidoc.utils.components.AmButton
+		style="@style/AppTheme.Button"
+		app:am_font_style="bold"
+		android:id="@+id/buttonSpecialist"
+		android:background="@drawable/button_light"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		android:paddingTop="@dimen/component_big"
+		android:paddingBottom="@dimen/component_big"
+		android:textColor="@color/colorTextLight"
+		android:textSize="@dimen/text_tiny"
+		android:text="@string/text_more"
+		android:layout_width="@dimen/tab"
+		android:layout_height="@dimen/tab"/>
+	
+	<com.ismealdi.hidoc.utils.components.AmTextView
+		android:id="@+id/labelName"
+		app:layout_constraintTop_toBottomOf="@id/buttonSpecialist"
+		app:layout_constraintLeft_toLeftOf="@id/buttonSpecialist"
+		app:layout_constraintRight_toRightOf="@id/buttonSpecialist"
+		android:paddingBottom="@dimen/component_small"
+		android:layout_marginTop="@dimen/component_small"
+		android:textColor="@color/colorTextPrimary"
+		android:textSize="@dimen/text_tiny"
+		android:ellipsize="end"
+		android:lines="1"
+		android:text="Test"
+		android:gravity="center"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content" />
+
+</android.support.constraint.ConstraintLayout>

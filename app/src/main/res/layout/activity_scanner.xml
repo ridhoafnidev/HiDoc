@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:background="@color/colorBackgroundPrimary">
+
+    <com.ismealdi.hidoc.utils.components.barcode.CameraSourcePreview
+        android:id="@+id/preview"
+        android:background="@color/colorBackgroundSecondary"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <com.ismealdi.hidoc.utils.components.barcode.GraphicOverlay
+            android:id="@+id/graphicOverlay"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.ismealdi.hidoc.utils.components.barcode.CameraSourcePreview>
+
+    <com.ismealdi.hidoc.utils.components.AmTextView
+        android:alpha="0.25"
+        android:background="@color/colorBackgroundPrimary"
+        app:am_font_style="regular"
+        android:textSize="@dimen/text_medium"
+        android:gravity="center"
+        android:text="@string/text_arahkan"
+        android:id="@+id/labelInfo"
+        android:paddingTop="@dimen/component_medium"
+        android:paddingBottom="@dimen/component_medium"
+        android:paddingLeft="@dimen/component_big"
+        android:paddingRight="@dimen/component_big"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/bottom_layout"
+        android:layout_height="0dp"/>
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/slider"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <com.ismealdi.hidoc.utils.components.AmTextView
+            app:am_font_style="bold"
+            android:layout_toEndOf="@id/buttonBack"
+            android:paddingStart="@dimen/component_big"
+            android:textColor="@color/colorTextLight"
+            android:textSize="@dimen/text_big"
+            android:gravity="start|center_vertical"
+            android:id="@+id/textBarcode"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlSymmetry" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            style="@style/AppTheme.Button"
+            android:id="@+id/buttonBack"
+            android:layout_width="@dimen/input_height"
+            android:layout_height="@dimen/input_height"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_chevron"
+            android:background="@drawable/button_light"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            tools:ignore="RtlHardcoded" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTransparent"
+    style="@style/AppTheme.Layout.Horizontal"
+    android:paddingTop="@dimen/component_small"
+    android:paddingBottom="@dimen/component_small"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.ismealdi.hidoc.utils.components.AmTextView
+        android:visibility="gone"
+        android:textSize="@dimen/text_tiny"
+        android:id="@+id/labelTimePrimary"
+        app:am_font_style="medium"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/labelTimePrimary"
+        android:layout_marginStart="@dimen/component_super"
+        android:layout_marginEnd="@dimen/component_big">
+
+        <com.ismealdi.hidoc.utils.components.AmTextView
+            android:textSize="@dimen/text_small"
+            android:id="@+id/labelMessagePrimary"
+            android:textColor="@color/colorTextLight"
+            android:background="@drawable/shape_chat_primary"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <com.ismealdi.hidoc.utils.components.AmTextView
+        android:visibility="gone"
+        android:textSize="@dimen/text_tiny"
+        android:id="@+id/labelTimeSecondary"
+        app:am_font_style="medium"
+        android:textColor="@color/colorTextSecondary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/labelTimeSecondary"
+        android:layout_marginEnd="@dimen/component_super"
+        android:layout_marginStart="@dimen/component_big">
+
+        <com.ismealdi.hidoc.utils.components.AmTextView
+            android:textSize="@dimen/text_small"
+            android:id="@+id/labelMessageSecondary"
+            android:textColor="@color/colorTextPrimary"
+            android:background="@drawable/shape_chat_secondary"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

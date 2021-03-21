@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/layoutParent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackgroundPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/componentToolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/component_toolbar" />
+
+    <android.support.constraint.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/componentToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <android.support.constraint.ConstraintLayout
+            style="@style/AppTheme.Margin.Horizontal"
+            android:id="@+id/layoutTopUser"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingLeft="@dimen/component_big"
+            android:paddingRight="@dimen/component_big"
+            android:paddingTop="@dimen/component_extra"
+            android:paddingBottom="@dimen/component_extra"
+            android:background="@drawable/shape_round"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlSymmetry">
+
+            <ImageView
+                android:contentDescription="@string/text_profile_picture"
+                android:id="@+id/imageUserPicture"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@drawable/shape_circle_placeholder"
+                android:layout_width="@dimen/profile_picture_big"
+                android:layout_height="@dimen/profile_picture_big" />
+
+            <android.support.constraint.ConstraintLayout
+                app:layout_constraintTop_toTopOf="@id/imageUserPicture"
+                app:layout_constraintBottom_toBottomOf="@id/imageUserPicture"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/imageUserPicture"
+                android:layout_marginStart="@dimen/component_small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    app:am_font_style="bold"
+                    android:id="@+id/labelName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_dash"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_medium"
+                    android:layout_marginEnd="@dimen/component_medium"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    android:id="@+id/labelPhone"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintTop_toBottomOf="@id/labelName"
+                    app:layout_constraintLeft_toLeftOf="@id/labelName"
+                    app:layout_constraintRight_toRightOf="@id/labelName"
+                    android:text="@string/text_dash"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <RatingBar
+                    android:layout_marginTop="@dimen/component_normal"
+                    app:layout_constraintTop_toBottomOf="@id/labelPhone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginEnd="30dp"
+                    android:id="@+id/ratingBar"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:stepSize="1.0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:scaleX="1.2"
+                    android:scaleY="1.2"
+                    android:transformPivotX="0dp"
+                    android:transformPivotY="0dp"
+                    style="@style/AppTheme.RatingBar" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            style="@style/AppTheme.Margin.Horizontal"
+            android:id="@+id/layoutUserInformation"
+            android:layout_marginTop="@dimen/component_extra"
+            app:layout_constraintTop_toBottomOf="@id/layoutTopUser"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="@dimen/component_extra"
+            android:background="@drawable/shape_round"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <com.ismealdi.hidoc.utils.components.AmTextView
+                android:id="@+id/labelUserInformation"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:am_font_style="bold"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_medium"
+                android:text="@string/text_user_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.ismealdi.hidoc.utils.components.AmTextView
+                android:id="@+id/buttonChat"
+                app:layout_constraintTop_toTopOf="@id/labelUserInformation"
+                app:layout_constraintBottom_toBottomOf="@id/labelUserInformation"
+                app:layout_constraintRight_toRightOf="parent"
+                app:am_font_style="bold"
+                android:textAllCaps="true"
+                android:textColor="@drawable/button_text_primary"
+                android:textSize="@dimen/text_small"
+                android:text="@string/text_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/labelUserInformation"
+                android:layout_marginTop="@dimen/component_big"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    android:layout_marginTop="@dimen/component_medium"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/text_small"
+                    android:text="@string/text_email_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    app:am_font_style="medium"
+                    android:id="@+id/labelEmail"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/text_dash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    android:layout_marginTop="@dimen/component_medium"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/text_small"
+                    android:text="@string/text_blood_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    app:am_font_style="medium"
+                    android:id="@+id/labelBloodType"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/text_dash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    android:layout_marginTop="@dimen/component_medium"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/text_small"
+                    android:text="@string/text_age_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    app:am_font_style="medium"
+                    android:textColor="@color/colorTextPrimary"
+                    android:id="@+id/labelAgeRange"
+                    android:text="@string/text_dash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    android:layout_marginTop="@dimen/component_medium"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/text_small"
+                    android:text="@string/text_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    app:am_font_style="medium"
+                    android:id="@+id/labelSex"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/text_dash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    android:layout_marginTop="@dimen/component_medium"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="@dimen/text_small"
+                    android:text="@string/text_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.ismealdi.hidoc.utils.components.AmTextView
+                    app:am_font_style="medium"
+                    android:id="@+id/labelHistory"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="@string/text_dash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

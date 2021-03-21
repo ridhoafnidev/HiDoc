@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "66233298177",
+    "firebase_url": "https://hidoc-ismealdi.firebaseio.com",
+    "project_id": "hidoc-ismealdi",
+    "storage_bucket": "hidoc-ismealdi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66233298177:android:003f038889514571",
+        "android_client_info": {
+          "package_name": "com.ismealdi.hidoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66233298177-l6i6m7qnih8i4b9kjq2rcr6hb5rp8767.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ismealdi.hidoc",
+            "certificate_hash": "2ec9eff7bae8a59a47f7a643babc0217ca00a156"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAEx5x98A3SLXEmWfKrX3iqB9q81bAJgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66233298177-besglj7nih6r4s0rj5busrddshkfhlph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutContainer"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_width="wrap_content"
+    android:layout_height="235dp"
+    android:background="@drawable/button_light"
+    android:layout_marginLeft="@dimen/component_normal"
+    android:layout_marginRight="@dimen/component_normal"
+    android:layout_marginTop="@dimen/component_normal"
+    android:layout_marginBottom="@dimen/component_normal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/imageDoctorGrid"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/shape_top_round"/>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/imageDoctorGrid"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/lineImageProfilePicture"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider" android:background="@color/colorDivider"/>
+
+    <com.ismealdi.hidoc.utils.components.AmTextView
+        app:am_font_style="medium"
+        android:id="@+id/labelName"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="@dimen/text_normal"
+        android:layout_marginTop="@dimen/component_big"
+        android:paddingLeft="@dimen/component_big"
+        android:paddingRight="@dimen/component_big"
+        app:layout_constraintTop_toBottomOf="@id/lineImageProfilePicture"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:lines="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <com.ismealdi.hidoc.utils.components.AmTextView
+        app:am_font_style="bold"
+        android:id="@+id/labelSpecialist"
+        android:textColor="@color/colorTextAccent"
+        android:textSize="@dimen/text_tiny"
+        android:paddingLeft="@dimen/component_big"
+        android:paddingRight="@dimen/component_big"
+        android:layout_marginTop="@dimen/component_tiny"
+        app:layout_constraintTop_toBottomOf="@id/labelName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:lines="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/component_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <com.ismealdi.hidoc.utils.components.AmButton
+            style="@style/AppTheme.Button"
+            app:am_font_style="bold"
+            android:id="@+id/buttonPlus"
+            android:background="@drawable/button_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/buttonChat"
+            android:layout_marginStart="@dimen/component_normal"
+            android:padding="@dimen/component_small"
+            android:gravity="center"
+            android:textColor="@color/colorTextLight"
+
+            android:text="@string/text_plus"
+            android:layout_width="30dp"
+            android:layout_height="@dimen/input_small"/>
+
+        <com.ismealdi.hidoc.utils.components.AmButton
+            style="@style/AppTheme.Button"
+            android:id="@+id/buttonChat"
+            android:background="@drawable/button_accent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:padding="@dimen/component_small"
+            android:gravity="center"
+            android:textColor="@color/colorTextLight"
+            android:text="@string/text_chat"
+            android:textSize="@dimen/text_tiny"
+            android:layout_width="55dp"
+            android:layout_height="@dimen/input_small"/>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

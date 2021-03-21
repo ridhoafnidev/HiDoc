@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:elevation="0dp"
+		android:elevation="0dp"
+		tools:targetApi="lollipop">
+
+	<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="@color/colorBackgroundSecondary"
+			app:popupTheme="@style/AppTheme">
+
+		<com.ismealdi.hidoc.utils.components.AmTextView
+				android:id="@+id/toolbarTitle"
+				app:am_font_style="bold"
+				android:textSize="@dimen/text_medium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="@color/colorTextAccent"
+				android:layout_gravity="start" />
+
+		<ImageView
+			android:visibility="gone"
+			android:id="@+id/imageProfilePicture"
+			android:layout_marginEnd="@dimen/activity_horizontal_margin"
+			android:layout_gravity="end|center_vertical"
+			android:src="@drawable/shape_circle_placeholder"
+			android:layout_width="35dp"
+			android:layout_height="35dp" />
+
+		<com.ismealdi.hidoc.utils.components.AmEditText
+				android:visibility="gone"
+				android:id="@+id/toolbarSearch"
+				android:drawableStart="@drawable/ic_search"
+				android:drawablePadding="@dimen/component_medium"
+				android:textSize="@dimen/text_small"
+				android:layout_marginStart="@dimen/activity_horizontal_margin_big"
+				android:layout_marginEnd="@dimen/activity_horizontal_margin"
+				style="@style/AppTheme.EditText.Accent"
+				android:hint="@string/text_search_chat"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+	</android.support.v7.widget.Toolbar>
+
+	<View
+			android:id="@+id/lineDivider"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/divider"
+			android:background="@color/colorDivider"/>
+</android.support.design.widget.AppBarLayout>
